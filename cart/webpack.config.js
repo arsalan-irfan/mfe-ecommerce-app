@@ -44,11 +44,16 @@ module.exports = {
       name: "cart",
       filename: "remoteEntry.js",
       remotes: {
-        home:"home@http://localhost:3000/remoteEntry.js",
-        pdp:"pdp@http://localhost:3001/remoteEntry.js",
-        cart:"cart@http://localhost:3002/remoteEntry.js"
+        home: "home@http://localhost:3000/remoteEntry.js",
+        pdp: "pdp@http://localhost:3001/remoteEntry.js",
+        cart: "cart@http://localhost:3002/remoteEntry.js",
       },
-      exposes: {},
+      exposes: {
+        "./cart": "./src/cart.js",
+        "./Login": "./src/Login.jsx",
+        "./MiniCart": "./src/MiniCart.jsx",
+        "./CartContent": "./src/CartContent.jsx",
+      },
       shared: {
         ...deps,
         react: {
